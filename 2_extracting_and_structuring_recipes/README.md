@@ -33,7 +33,7 @@ extract_prompt = PromptTemplate(
     input_variables=["recipe"], 
     template="""{recipe}
     
-    Extract the ingredients and instructions from the above, output as json with keys instructions and ingredients. For ingredients extract quantity if available."""
+    Extract the ingredients and instructions from the above, output as json with keys lowercase keys instructions and ingredients. For ingredients extract quantity if available."""
 )
 
 # secondary prompt to group extracted ingredients into categories
