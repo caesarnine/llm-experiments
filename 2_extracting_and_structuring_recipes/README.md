@@ -12,7 +12,7 @@ What this does is:
 
 All the parsing and structuring is occuring within GPT3 - no complex logic on the Python side.
 
-![Parsing Example](https://binal.pub/img/gpt3-parsing-recipe.gif)
+![Parsing Example](img/gpt3-parsing-recipe.gif)
 
 >In the past when I wanted to do something like this I would have finetuned/trained a named entity recognition model (NER). To start from scratch this involved a lot of time and effort to get going (mainly for steps 1 and 2). Steps 1, 2, and 3 would also have to be repeated if we wanted to add a new entity we'd like to extract.
 >1. Gathering a corpus of training data.
