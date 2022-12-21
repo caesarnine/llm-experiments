@@ -14,7 +14,7 @@ def parse_recipe(recipe_text: str) -> dict:
         input_variables=["recipe"],
         template="""{recipe}
         
-        Extract the ingredients and instructions from the above, output as json with keys instructions and ingredients. For ingredients extract quantity if available."""
+        Extract the ingredients and instructions from the above, output as json with keys lowercase keys instructions and ingredients. For ingredients extract quantity if available. """
     )
 
     # secondary prompt to group extracted ingredients into categories
@@ -26,11 +26,22 @@ def parse_recipe(recipe_text: str) -> dict:
         Group above ingredients into similar categories, output as json with lowercase keys categories:"""
     )
 
+    nutrition_prompt = PromptTemplate(
+        input_variables=["recipe"],
+        template="""
+        {recipe}
+
+        Generate the nutrition info for the above receipt and whether or not it's healthy.
+        """
+    )
+
     extract_chain = LLMChain(prompt=extract_prompt, llm=llm)
     grouping_chain = LLMChain(prompt=grouping_prompt, llm=llm)
+    nutrition_chain = LLMChain(prompt=nutrition_prompt, llm=llm)
 
     text_result = extract_chain.run(recipe_text)
     json_result = json.loads(text_result)
+    print(json_result)
 
     ingredient_group_text = grouping_chain.run(
         json.dumps(json_result['ingredients']))
@@ -38,4 +49,6 @@ def parse_recipe(recipe_text: str) -> dict:
 
     json_result['grouped_ingredients'] = ingredient_group_json
 
-    return json_result
+    nutrition_info = nutrition_chain(json.dumps(json_result))
+
+    return nutrition_info
