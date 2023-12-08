@@ -1,4 +1,4 @@
-[https://binal.pub/2023/12/structured-ocr-with-gpt-vision/]('https://binal.pub/2023/12/structured-ocr-with-gpt-vision/)
+[https://binal.pub/2023/12/structured-ocr-with-gpt-vision/](https://binal.pub/2023/12/structured-ocr-with-gpt-vision/)
 
 I'm continuously impressed with GPT Vision the more I use it. I've recently been working on a side project that involves parsing PDFs with embedded tables/images/flow charts for a RAG (retrieval augmented generation) chatbot, and found the most painful part to be dealing with parsing and structuring the PDFs.
 
@@ -27,7 +27,7 @@ Here's an example of what I mean.
 
 I inputted this page from an Accounting Guideline from PWC that I found online:
 
-![Example Page](gpt4v-ocr.png)
+![Example Page](data/gpt4v-ocr.png)
 
 And was able to generate this well structured output. Notice how even the flowchart was parsed into a DAG with individal nodes and decision points.
 
