@@ -10,7 +10,9 @@ First - it does a great job at OCR, which isn't super surprising given all it's 
 
 What I was pleasantly surprised by was that I could prompt it to output the OCRed text in an incredibly structured manner, doing things like having the model breakdown flowchart images into nodes and edges, or having it parse tables into rows and columns.
 
-{{< video src="gpt4-structured-ocr" >}}
+
+https://github.com/caesarnine/llm-experiments/assets/5447671/4cc2e771-0ec4-45ff-a8fd-562b68a520ad
+
 
 ### Why is this useful?
 
